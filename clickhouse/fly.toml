@@ -1,4 +1,4 @@
-app = "plausible-clickhouse"
+app = "<prefix>-clickhouse"
 
 kill_signal = "SIGINT"
 kill_timeout = 5
@@ -12,5 +12,5 @@ services = []
   auto_rollback = true
 
 [[mounts]]
-  source = "plausible_clickhouse_data"
+  source = "<prefix>_clickhouse_data"
   destination = "/var/lib/clickhouse"

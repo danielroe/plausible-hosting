@@ -1,4 +1,4 @@
-app = "plausible"
+app = "<prefix>"
 
 kill_signal = "SIGTERM"
 kill_timeout = 5
@@ -8,9 +8,14 @@ processes = []
   release_command = "db migrate"
 
 [env]
-  CLICKHOUSE_DATABASE_URL="http://plausible-clickhouse.internal:8123/plausible_dev"
+  CLICKHOUSE_DATABASE_URL="http://<prefix>-clickhouse.internal:8123/plausible_dev"
   LISTEN_IP="::"
   ECTO_IPV6=true
+
+
+[mounts]
+source="<prefix>_data"
+destination="/data"
 
 [experimental]
   allowed_public_ports = []
